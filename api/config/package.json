@@ -1,11 +1,11 @@
 {
-  "name": "@kaddiya/server",
+  "name": "@kaddiya/config",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Ameyak <ameya.kulkarni@weboniselab.com>",
   "homepage": "https://github.com/ameyayk/boilerplate#readme",
   "license": "ISC",
-  "main": "lib/server.js",
+  "main": "lib/config.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -13,17 +13,22 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ameyayk/boilerplate.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "NODE_ENV=test CLI_ENV_VAR=secret mocha __tests__/*.test.js "
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.8.1",
+    "mocha": "^8.1.3"
   },
   "bugs": {
     "url": "https://github.com/ameyayk/boilerplate/issues"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
   }
 }
