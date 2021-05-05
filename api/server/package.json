@@ -24,6 +24,10 @@
     "url": "https://github.com/ameyayk/boilerplate/issues"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@kaddiya/config": "^0.0.0",
+    "consola": "^2.15.3",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
   }
 }
