@@ -14,6 +14,10 @@ passport.use(
     },
     async (email, password, done) => {
       try {
+        /* 
+        need to check whether a user already exists..if it does then return an error 409
+        Also check whether email is valid
+        */
         const user = await userSchema.create({ email, password });
         return done(null, user);
       } catch (error) {
