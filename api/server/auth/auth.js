@@ -19,7 +19,7 @@ passport.use(
         Also check whether email is valid
         */
         const user = await userSchema.create({ email, password });
-        return done(null, user);
+        done(null, user);
       } catch (error) {
         done(error);
       }
