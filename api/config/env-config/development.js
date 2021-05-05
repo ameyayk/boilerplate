@@ -1,6 +1,6 @@
 module.exports = {
   MONGO_DB_HOST: '127.0.0.1',
   MONGO_DB_PORT: '27017',
-  MONGO_DB_NAME: 'sac',
+  MONGO_DB_NAME: 'boilerplate',
   APP_PORT: 5000,
 };

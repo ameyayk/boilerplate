@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const Configuration = require('@kaddiya/config');
+const { userSchema } = require('@kaddiya/models/lib/user');
 const consola = require('consola');
 const cookieParser = require('cookie-parser');
 const indexRouter = require('../routes/index');
@@ -29,8 +30,9 @@ async function startup() {
       useUnifiedTopology: true,
       sslValidate: true,
     });
-
     consola.info('mongo connected', mongoURI);
+    mongoose.model('users', userSchema);
+
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());

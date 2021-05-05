@@ -1,11 +1,11 @@
 {
-  "name": "@kaddiya/mongodb-service",
+  "name": "@kaddiya/models",
   "version": "0.0.0",
-  "description": "'",
+  "description": "> TODO: description",
   "author": "Ameyak <ameya.kulkarni@weboniselab.com>",
   "homepage": "https://github.com/ameyayk/boilerplate#readme",
   "license": "ISC",
-  "main": "lib/mongodb-service.js",
+  "main": "lib/models.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -13,6 +13,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ameyayk/boilerplate.git"
@@ -23,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/ameyayk/boilerplate/issues"
   },
-  "dependencies": {
-    "consola": "^2.15.3"
+  "peerDependencies": {
+    "mongoose": "^5.12.7"
   }
 }
