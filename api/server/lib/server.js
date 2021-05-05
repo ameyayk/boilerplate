@@ -6,6 +6,7 @@ const Configuration = require('@kaddiya/config');
 const { userSchema } = require('@kaddiya/models/lib/user');
 const consola = require('consola');
 const cookieParser = require('cookie-parser');
+
 const indexRouter = require('../routes/index');
 const usersRouter = require('../routes/users');
 
@@ -33,9 +34,10 @@ async function startup() {
     consola.info('mongo connected', mongoURI);
     mongoose.model('users', userSchema);
 
-    app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
+    app.use(express.json());
     app.use(cookieParser());
+
     app.use('/', indexRouter);
     app.use('/users', usersRouter);
     app.listen(APP_PORT, () => {

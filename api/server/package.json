@@ -18,7 +18,8 @@
     "url": "git+https://github.com/ameyayk/boilerplate.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "dev" :"env NODE_ENV=development APP_PORT=5001 node lib/server.js"
   },
   "bugs": {
     "url": "https://github.com/ameyayk/boilerplate/issues"

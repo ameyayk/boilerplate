@@ -8,7 +8,12 @@ const userSchema = new Schema(
       type: Number,
       index: true,
     },
-    userName: String,
+    userName: {
+      type: String,
+      index: {
+        unique: true,
+      },
+    },
   },
   { collection: 'users', timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } },
 );
