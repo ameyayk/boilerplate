@@ -27,6 +27,7 @@
     "url": "https://github.com/ameyayk/boilerplate/issues"
   },
   "peerDependencies": {
+    "bcrypt": "^1.0.1",
     "mongoose": "^5.12.7"
   }
 }

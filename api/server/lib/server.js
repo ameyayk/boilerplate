@@ -6,9 +6,11 @@ const Configuration = require('@kaddiya/config');
 const { userSchema } = require('@kaddiya/models/lib/user');
 const consola = require('consola');
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
+require('../auth/auth');
 
 const indexRouter = require('../routes/index');
-const usersRouter = require('../routes/users');
+const apiRouter = require('../routes/secure-route');
 
 async function startup() {
   try {
@@ -39,7 +41,7 @@ async function startup() {
     app.use(cookieParser());
 
     app.use('/', indexRouter);
-    app.use('/users', usersRouter);
+    app.use('/api', passport.authenticate('jwt', { session: false }), apiRouter);
     app.listen(APP_PORT, () => {
       consola.info(`Example app listening at http://localhost:${APP_PORT}`);
     });
