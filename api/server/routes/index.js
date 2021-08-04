@@ -2,6 +2,7 @@
 const express = require('express');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const { pipeFile } = require('../services/file-reader');
 
 const router = express.Router();
 
@@ -34,6 +35,10 @@ router.post('/login', async (req, res, next) => {
     }
     return next();
   })(req, res, next);
+});
+
+router.all('/read', async (res, req, next) => {
+  await pipeFile('logfile', res);
 });
 
 module.exports = router;
